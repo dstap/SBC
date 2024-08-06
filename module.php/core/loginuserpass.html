@@ -250,7 +250,29 @@ input[type="submit"] {
           <img class="logo" src="https://sbc.files.cloudworkengine.net.au/pub/5F041387_logo.png">
 <h2>St Bernard's College</h2>
         </div>
-
+<script type="text/javascript">
+    var stateId = '_91cbbe7ef24de2b9a6fe0b8e2e3f467603295c1b77:https://sbc-login.cloudworkengine.net/saml2/idp/SSOService.php?spentityid=https%3A%2F%2Fmysbc.sbc.vic.edu.au&RelayState=https%3A%2F%2Fmysbc.sbc.vic.edu.au%2Fsaml%2Findex.php&cookieTime=1722903672';
+  if (window.PublicKeyCredential) {
+    var umd = document.createElement('script');
+    umd.src = '/module.php/cloudworkauth/simplewebauthn.es5.umd.min.js';
+    var webauthn = document.createElement('script');
+    webauthn.src = '/module.php/cloudworkauth/webauthn.js';
+    umd.onload = function() {
+      document.head.append(webauthn);
+    }
+    document.head.append(umd);
+  } else {
+    $(document).ready(function() { 
+    $("#password").show();
+    $("#submit").show();
+    $("#webauthnBegin").remove();
+    $("#f").submit(function() {
+      $("#submit").val('Signing in...');
+      $("#submit").attr("disabled", "disabled");
+    });
+  });
+}
+</script>
 <div class="login">
     <h3>Please enter your username and password</h3>
 	<form method="POST" name="f" id="f" data-netlify="true">
